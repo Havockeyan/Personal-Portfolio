@@ -1,15 +1,17 @@
 export const NAVIGATION_ITEMS = [
-  { 
-    id: 'home', 
-    name: 'Home', 
-    href: '#home', 
-    active: true 
+  {
+    id: 'home',
+    name: 'Home',
+    href: '/',
+    active: true,
+    type: 'route',
   },
-  { 
-    id: 'skills', 
-    name: 'Skills', 
-    href: '#skills', 
-    active: false 
+  {
+    id: 'about',
+    name: 'About',
+    href: '/about',
+    active: false,
+    type: 'route',
   },
 ];
 

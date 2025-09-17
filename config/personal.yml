@@ -1,0 +1,54 @@
+# Personal Information Configuration
+# Edit these values to customize your portfolio
+
+name: "Karthikeyan K"
+title: "Full Stack Developer"
+tagline: "Crafting delightful web experiences with code, design, and curiosity."
+description: "Passionate developer with expertise in modern web technologies and backend development."
+
+# Contact Information
+email: "karthikeyan72727@gmail.com"
+location: "Chennai, India"
+phone: "+91 9360141967"
+
+# Social Media Links
+social:
+  github: "https://github.com/Havockeyan"
+  linkedin: "https://www.linkedin.com/in/karthikeyan-k-35a6581b3"
+  twitter: "https://x.com/yourusername"
+  instagram: "https://instagram.com/yourusername"
+
+# Professional Summary
+summary: |
+  I'm a passionate developer with expertise in modern web technologies. 
+  Currently working as a Member Technical Staff at Zoho Corporation, 
+  where I develop REST API services using Java and SQL. I love creating 
+  scalable and innovative solutions that make a difference.
+
+# Skills
+skills:
+  - "JavaScript"
+  - "TypeScript"
+  - "React"
+  - "Next.js"
+  - "Node.js"
+  - "Java"
+  - "Python"
+  - "SQL"
+  - "HTML/CSS"
+  - "Tailwind CSS"
+  - "AWS"
+  - "Docker"
+
+# Technologies
+technologies:
+  - "React"
+  - "Next.js"
+  - "Node.js"
+  - "Java"
+  - "Python"
+  - "PostgreSQL"
+  - "MongoDB"
+  - "AWS"
+  - "Docker"
+  - "Git"

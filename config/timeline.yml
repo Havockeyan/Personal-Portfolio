@@ -1,0 +1,31 @@
+# Timeline Configuration
+# Add your education and work experience here
+
+timeline:
+  - year: "2017"
+    title: "SSLC (10th)"
+    description: "Rajalakshmi Genguswamy Matriculation Higher Secondary School, Udumalpet. Percentage: 93%."
+    type: "education"
+    
+  - year: "2019"
+    title: "HSC (12th)"
+    description: "Rajalakshmi Genguswamy Matriculation Higher Secondary School, Udumalpet. Percentage: 75%."
+    type: "education"
+    
+  - year: "2023"
+    title: "B.Tech Information Technology"
+    description: "Dr. Mahalingam College of Engineering and Technology, Pollachi. CGPA: 9.05."
+    type: "education"
+    
+  - year: "Present"
+    title: "Member Technical Staff — Zoho Corporation"
+    description: "Backend developer building REST API services using Java and SQL. Location: Kumbakonam, Tamil Nadu."
+    type: "work"
+
+# Timeline Section Settings
+timeline_settings:
+  title: "THE JOURNEY"
+  subtitle: "Humble beginnings to mastering tech: my evolving path."
+  intro: "Here's my education and work experience timeline."
+  changelog_text: "Changelog"
+  changelog_emoji: "🎉"
