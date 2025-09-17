@@ -23,7 +23,7 @@ export default function UIMockups() {
               <span className="code-keyword">function</span> <span className="code-function">hello</span>() {'{'}
             </div>
             <div className="code-line">
-              &nbsp;&nbsp;<span className="code-keyword">return</span> <span className="code-string">"Hello World"</span>;
+              &nbsp;&nbsp;<span className="code-keyword">return</span> <span className="code-string">&quot;Hello World&quot;</span>;
             </div>
             <div className="code-line">{'}'}</div>
           </div>
@@ -105,7 +105,7 @@ export default function UIMockups() {
       {/* GitHub */}
       <div className="mockup mockup-github">
         <div className="mockup-header">
-          <div className="mockup-title">Let's build from here, together</div>
+          <div className="mockup-title">Let&apos;s build from here, together</div>
           <div className="mockup-subtitle">The complete developer platform to build, scale, and deliver secure software</div>
         </div>
         <div className="mockup-content">

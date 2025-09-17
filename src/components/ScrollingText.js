@@ -1,9 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 export default function ScrollingText() {
-  const roles = [
+  const roles = useMemo(() => [
     'Web Developer',
     'Front End Dev',
     'Full Stack Dev',
@@ -11,7 +11,7 @@ export default function ScrollingText() {
     'JavaScript Developer',
     'UI/UX Developer',
     'Software Engineer'
-  ];
+  ], []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
@@ -55,7 +55,7 @@ export default function ScrollingText() {
     }, isDeleting ? 100 : 150); // Faster deleting, slower typing
 
     return () => clearTimeout(timeout);
-  }, [currentText, isDeleting, currentIndex]);
+  }, [currentText, isDeleting, currentIndex, roles]);
 
   // Cursor blinking effect
   useEffect(() => {
