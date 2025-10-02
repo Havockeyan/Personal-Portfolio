@@ -1,10 +1,11 @@
 # Karthikeyan K - Personal Portfolio
 
-A modern, responsive portfolio website built with Next.js showcasing my work as a Full Stack Developer. The site features a clean design with dark theme, purple accents, and is fully customizable through YAML configuration files.
+A modern, responsive portfolio website built with Next.js showcasing my work as a Full Stack Developer. The site features a clean design with both light and dark themes, purple accents, and is fully customizable through YAML configuration files.
 
 ## Features
 
-- 🌟 **Modern Design**: Clean, professional design with dark theme and purple accents
+- 🌟 **Modern Design**: Clean, professional design with both light and dark themes and purple accents
+- 🌓 **Theme Toggle**: Seamless switching between light and dark modes with persistent preferences
 - 📱 **Responsive**: Fully responsive design that works on all devices
 - ⚡ **Fast**: Built with Next.js for optimal performance
 - 🎨 **Customizable**: Easy customization through YAML configuration files
@@ -13,6 +14,7 @@ A modern, responsive portfolio website built with Next.js showcasing my work as 
 - 🌌 **Background Effects**: Animated starfield and grid background
 - 🚀 **Projects Showcase**: Dedicated projects page with technology tags and repository links
 - 🔧 **YAML Configuration**: All content managed through easy-to-edit YAML files
+- 🎨 **Theme System**: Comprehensive CSS variable-based theme system for easy customization
 
 ## Quick Start
 
@@ -166,17 +168,25 @@ Personal-Portfolio/
 │   ├── app/               # Next.js app directory
 │   │   ├── about/         # About page
 │   │   ├── projects/      # Projects page
-│   │   ├── layout.js      # Root layout
+│   │   ├── layout.js      # Root layout with theme provider
 │   │   └── page.js        # Home page
 │   ├── components/        # React components
 │   │   ├── Footer.js     # Footer component
 │   │   ├── JourneyTimeline.js # Timeline component
+│   │   ├── Navbar.js     # Navigation with theme toggle
 │   │   └── ...
+│   ├── contexts/         # React contexts
+│   │   └── ThemeContext.js # Theme management context
 │   ├── styles/           # CSS styles
 │   │   ├── globals.css   # Global styles
+│   │   ├── themes.css    # Theme variables and CSS custom properties
 │   │   └── sections/     # Section-specific styles
 │   │       ├── about.css # About page styles
-│   │       └── projects.css # Projects page styles
+│   │       ├── navbar.css # Navigation styles
+│   │       ├── hero.css  # Hero section styles
+│   │       ├── skills.css # Skills section styles
+│   │       ├── projects.css # Projects page styles
+│   │       └── footer.css # Footer styles
 │   ├── constants/        # Constants and templates
 │   │   ├── navigation.js # Navigation items
 │   │   └── projects.js   # Project templates and structure
@@ -198,7 +208,29 @@ Personal-Portfolio/
 
 - Global styles: `src/styles/globals.css`
 - Component styles: `src/styles/sections/`
+- Theme variables: `src/styles/themes.css`
 - Theme colors: Update `config/site.yml` theme section
+
+### Theme System
+
+The portfolio includes a comprehensive theme system with light and dark modes:
+
+#### CSS Variables
+All colors are defined as CSS custom properties in `src/styles/themes.css`:
+- `--bg-primary`, `--bg-secondary`, `--bg-tertiary`: Background colors
+- `--text-primary`, `--text-secondary`, `--text-tertiary`: Text colors
+- `--accent-primary`, `--accent-secondary`, `--accent-tertiary`: Accent colors
+- `--border-primary`, `--border-secondary`: Border colors
+- `--shadow-primary`, `--shadow-secondary`: Shadow colors
+
+#### Theme Context
+The theme system uses React Context (`src/contexts/ThemeContext.js`) for state management:
+- Automatic theme persistence in localStorage
+- Hydration-safe implementation
+- Smooth transitions between themes
+
+#### Adding New Themes
+To add a new theme, add a new `[data-theme="theme-name"]` selector in `themes.css` and update the context accordingly.
 
 ### Adding New Components
 

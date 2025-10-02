@@ -5,14 +5,14 @@
 
 /* Warning Banner Styles */
 .warning-banner {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: #000000;
+  background: var(--warning-bg);
+  color: var(--warning-text);
   padding: 0.75rem 1rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 2px solid #b45309;
-  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+  border-bottom: 2px solid var(--warning-border);
+  box-shadow: 0 2px 8px var(--warning-shadow);
 }
 
 .warning-banner-content {
@@ -44,7 +44,7 @@
 .warning-close {
   background: none;
   border: none;
-  color: #000000;
+  color: var(--warning-text);
   cursor: pointer;
   padding: 0.25rem;
   border-radius: 0.25rem;
@@ -60,15 +60,15 @@
 }
 
 .warning-close:focus {
-  outline: 2px solid #000000;
+  outline: 2px solid var(--warning-text);
   outline-offset: 2px;
 }
 
 /* Adjust body padding to account for sticky banner */
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  background: linear-gradient(135deg, #000000 0%, #0f0f23 50%, #000000 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -86,8 +86,8 @@ html {
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-  background: linear-gradient(135deg, #000000 0%, #0f0f23 50%, #000000 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
+  color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -127,8 +127,8 @@ body {
 
 .tech-logo {
   position: absolute;
-  background: rgba(17, 24, 39, 0.8);
-  border: 1px solid rgba(55, 65, 81, 0.3);
+  background: var(--tech-logo-bg);
+  border: 1px solid var(--tech-logo-border);
   border-radius: 12px;
   padding: 1rem;
   backdrop-filter: blur(10px);
@@ -146,9 +146,9 @@ body {
 
 .tech-logo:hover {
   transform: rotate(var(--rotation, 0deg)) scale(1.1);
-  border-color: rgba(168, 85, 247, 0.4);
+  border-color: var(--border-accent-hover);
   animation-play-state: paused;
-  background: rgba(17, 24, 39, 0.9);
+  background: var(--bg-overlay-hover);
 }
 
 .logo-icon {
@@ -166,7 +166,7 @@ body {
 
 .logo-text {
   font-size: 0.875rem;
-  color: #d1d5db;
+  color: var(--tech-logo-text);
   text-align: center;
   font-weight: 500;
 }
@@ -187,13 +187,13 @@ body {
 .mockup-title {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
   margin-bottom: 0.25rem;
 }
 
 .mockup-subtitle {
   font-size: 0.75rem;
-  color: #9ca3af;
+  color: var(--text-tertiary);
 }
 
 .mockup-content {
@@ -211,13 +211,13 @@ body {
 }
 
 .mockup-button-green {
-  background-color: #10b981;
+  background-color: var(--success);
   color: #ffffff;
 }
 
 .mockup-button-outline {
-  border: 1px solid #6b7280;
-  color: #ffffff;
+  border: 1px solid var(--text-muted);
+  color: var(--text-primary);
   background: transparent;
 }
 
@@ -243,7 +243,7 @@ body {
 }
 
 .code-snippet {
-  background: #1f2937;
+  background: var(--code-bg);
   border-radius: 6px;
   padding: 0.75rem;
   font-family: 'Monaco', 'Menlo', monospace;
@@ -255,15 +255,15 @@ body {
 }
 
 .code-keyword {
-  color: #f59e0b;
+  color: var(--code-keyword);
 }
 
 .code-function {
-  color: #3b82f6;
+  color: var(--code-function);
 }
 
 .code-string {
-  color: #10b981;
+  color: var(--code-string);
 }
 
 .tech-node {
@@ -317,7 +317,7 @@ body {
 .amount {
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
 }
 
 .change {
@@ -326,13 +326,13 @@ body {
 }
 
 .change.positive {
-  color: #10b981;
+  color: var(--success);
 }
 
 .chart-placeholder {
   width: 100%;
   height: 40px;
-  background: linear-gradient(45deg, #374151, #4b5563);
+  background: linear-gradient(45deg, var(--bg-tertiary), var(--text-muted));
   border-radius: 4px;
 }
 
@@ -346,12 +346,12 @@ body {
 .terminal-line {
   font-family: 'Monaco', 'Menlo', monospace;
   font-size: 0.75rem;
-  color: #10b981;
+  color: var(--success);
   margin-bottom: 0.5rem;
 }
 
 .terminal-prompt {
-  color: #f59e0b;
+  color: var(--code-keyword);
 }
 
 .tech-css {
@@ -402,7 +402,7 @@ body {
 
 .music-title {
   font-size: 0.75rem;
-  color: #9ca3af;
+  color: var(--text-tertiary);
   margin-bottom: 0.25rem;
 }
 
@@ -431,13 +431,13 @@ body {
 
 .song-name {
   font-size: 0.75rem;
-  color: #ffffff;
+  color: var(--text-primary);
   font-weight: 500;
 }
 
 .song-artist {
   font-size: 0.625rem;
-  color: #9ca3af;
+  color: var(--text-tertiary);
 }
 
 .tech-docker {
@@ -586,23 +586,23 @@ body {
 }
 
 .btn-primary {
-  background-color: #7c3aed;
+  background-color: var(--accent-tertiary);
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  background-color: #6d28d9;
+  background-color: var(--accent-primary);
 }
 
 .btn-secondary {
-  border: 1px solid #a855f7;
-  color: #a855f7;
+  border: 1px solid var(--accent-primary);
+  color: var(--accent-primary);
   background: transparent;
 }
 
 .btn-secondary:hover {
-  background-color: #a855f7;
-  color: #000000;
+  background-color: var(--accent-primary);
+  color: var(--bg-primary);
 }
 
 /* Section Styles */
@@ -611,7 +611,7 @@ body {
 }
 
 .section-dark {
-  background-color: #111827;
+  background-color: var(--bg-tertiary);
 }
 
 .section-container {
@@ -624,12 +624,12 @@ body {
   font-weight: bold;
   text-align: center;
   margin-bottom: 3rem;
-  color: #c084fc;
+  color: var(--accent-secondary);
 }
 
 .section-text {
   font-size: 1.125rem;
-  color: #d1d5db;
+  color: var(--text-secondary);
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
@@ -645,7 +645,7 @@ body {
 }
 
 .project-card {
-  background-color: #1f2937;
+  background-color: var(--bg-tertiary);
   padding: 1.5rem;
   border-radius: 0.5rem;
   transition: transform 0.2s ease;
@@ -659,11 +659,11 @@ body {
   font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 1rem;
-  color: #c084fc;
+  color: var(--accent-secondary);
 }
 
 .project-card p {
-  color: #d1d5db;
+  color: var(--text-secondary);
   margin-bottom: 1rem;
 }
 
@@ -674,7 +674,7 @@ body {
 }
 
 .project-tag {
-  background-color: #7c3aed;
+  background-color: var(--accent-tertiary);
   color: #ffffff;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -690,14 +690,14 @@ body {
 }
 
 .contact-link {
-  color: #a855f7;
+  color: var(--accent-primary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
 }
 
 .contact-link:hover {
-  color: #c084fc;
+  color: var(--accent-secondary);
 }
 
 /* Responsive Design */
