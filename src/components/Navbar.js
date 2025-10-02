@@ -8,10 +8,19 @@ import { NAVIGATION_ITEMS, BRAND_INFO } from '../constants/navigation';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentHash, setCurrentHash] = useState('');
+  const [isMounted, setIsMounted] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const updateHash = () => setCurrentHash(typeof window !== 'undefined' ? (window.location.hash || '') : '');
+    // Mark as mounted to safely use window-dependent values on client
+    setIsMounted(true);
+    
+    const updateHash = () => {
+      if (typeof window !== 'undefined') {
+        setCurrentHash(window.location.hash || '');
+      }
+    };
+    
     updateHash();
     window.addEventListener('hashchange', updateHash);
     return () => window.removeEventListener('hashchange', updateHash);
@@ -19,23 +28,17 @@ const Navbar = () => {
 
   const isItemActive = useMemo(() => {
     return (item) => {
-      if (typeof window === 'undefined') return false;
-      try {
-        const url = new URL(item.href, window.location.origin);
-        const itemPath = url.pathname;
-        const itemHash = url.hash;
-        if (itemHash) {
-          return pathname === itemPath && currentHash === itemHash;
-        }
-        return pathname === itemPath;
-      } catch (err) {
-        if (item.href?.startsWith('#')) {
-          return currentHash === item.href;
-        }
+      // Route links: compare against pathname only (SSR-safe)
+      if (item.type === 'route') {
         return pathname === item.href;
       }
+      // Hash links: only evaluate on client after mount to avoid hydration mismatch
+      if (item.href?.startsWith('#')) {
+        return isMounted && currentHash === item.href;
+      }
+      return false;
     };
-  }, [pathname, currentHash]);
+  }, [pathname, currentHash, isMounted]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);

@@ -13,6 +13,13 @@ export const NAVIGATION_ITEMS = [
     active: false,
     type: 'route',
   },
+  {
+    id: 'projects',
+    name: 'Projects',
+    href: '/projects',
+    active: false,
+    type: 'route',
+  },
 ];
 
 export const BRAND_INFO = {

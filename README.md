@@ -1,6 +1,6 @@
-# Personal Portfolio Template
+# Karthikeyan K - Personal Portfolio
 
-A modern, responsive portfolio website built with Next.js that can be easily customized through YAML configuration files.
+A modern, responsive portfolio website built with Next.js showcasing my work as a Full Stack Developer. The site features a clean design with dark theme, purple accents, and is fully customizable through YAML configuration files.
 
 ## Features
 
@@ -11,6 +11,8 @@ A modern, responsive portfolio website built with Next.js that can be easily cus
 - 📊 **Timeline**: Interactive timeline with scroll-based animations
 - 🎭 **Animations**: Smooth animations and transitions throughout
 - 🌌 **Background Effects**: Animated starfield and grid background
+- 🚀 **Projects Showcase**: Dedicated projects page with technology tags and repository links
+- 🔧 **YAML Configuration**: All content managed through easy-to-edit YAML files
 
 ## Quick Start
 
@@ -91,6 +93,32 @@ timeline_settings:
   changelog_emoji: "🎉"
 ```
 
+### Projects (`config/projects.yml`)
+
+```yaml
+# User-specific project data (customize these)
+projects:
+  - title: "Project Name"
+    duration: "3 Months"
+    description: "Project description here..."
+    frontend:
+      - "React"
+      - "CSS"
+    backend:
+      - "Node.js"
+      - "MongoDB"
+    repository: "https://github.com/username/project"
+    demo: "https://yourproject.com" # Optional
+
+# Customizable section settings
+projects_settings:
+  title: "Projects"
+  subtitle: "A curated selection of things I've built and shipped recently."
+  description: "Here are some of my recent projects that showcase my skills."
+```
+
+**Note**: The project structure and component logic are defined in `src/constants/projects.js` as templates. Only the data above needs to be customized in the YAML file.
+
 ### Site Settings (`config/site.yml`)
 
 ```yaml
@@ -132,10 +160,12 @@ Personal-Portfolio/
 ├── config/                 # Configuration files
 │   ├── personal.yml       # Personal information
 │   ├── timeline.yml       # Timeline data
+│   ├── projects.yml       # Projects data
 │   └── site.yml           # Site settings
 ├── src/
 │   ├── app/               # Next.js app directory
 │   │   ├── about/         # About page
+│   │   ├── projects/      # Projects page
 │   │   ├── layout.js      # Root layout
 │   │   └── page.js        # Home page
 │   ├── components/        # React components
@@ -144,7 +174,12 @@ Personal-Portfolio/
 │   │   └── ...
 │   ├── styles/           # CSS styles
 │   │   ├── globals.css   # Global styles
-│   │   └── sections/    # Section-specific styles
+│   │   └── sections/     # Section-specific styles
+│   │       ├── about.css # About page styles
+│   │       └── projects.css # Projects page styles
+│   ├── constants/        # Constants and templates
+│   │   ├── navigation.js # Navigation items
+│   │   └── projects.js   # Project templates and structure
 │   └── utils/            # Utility functions
 │       └── configLoader.js # YAML config loader
 ├── public/               # Static assets
@@ -189,11 +224,14 @@ The project can be deployed to any platform that supports Next.js:
 
 ## Technologies Used
 
-- **Next.js** - React framework
-- **React** - UI library
-- **CSS3** - Styling
-- **YAML** - Configuration
+- **Next.js 15** - React framework with App Router
+- **React 18** - UI library
+- **CSS3** - Styling with modern features
+- **YAML** - Configuration management
 - **js-yaml** - YAML parsing
+- **Node.js** - Backend development
+- **MongoDB** - Database
+- **Git** - Version control
 
 ## Contributing
 
@@ -212,4 +250,4 @@ If you have any questions or need help customizing your portfolio, please open a
 
 ---
 
-**Happy coding!** 🚀
+**Built with ❤️ by Karthikeyan K** 🚀

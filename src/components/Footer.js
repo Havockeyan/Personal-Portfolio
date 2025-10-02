@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { getPersonalConfig, getSiteConfig } from '../utils/configLoader';
+import { NAVIGATION_ITEMS } from '../constants/navigation';
 
 export default function Footer() {
   const personalConfig = getPersonalConfig();
@@ -19,10 +21,11 @@ export default function Footer() {
           <nav className="footer-links" aria-label="Quick Links">
             <h4 className="footer-heading">Quick Links</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              {NAVIGATION_ITEMS.map((item) => (
+                <li key={item.id}>
+                  <Link href={item.href}>{item.name}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
 

@@ -54,12 +54,20 @@ export function getSiteConfig() {
 }
 
 /**
+ * Load projects configuration
+ */
+export function getProjectsConfig() {
+  return loadConfig('projects');
+}
+
+/**
  * Get all configurations
  */
 export function getAllConfigs() {
   return {
     personal: getPersonalConfig(),
     timeline: getTimelineConfig(),
-    site: getSiteConfig()
+    site: getSiteConfig(),
+    projects: getProjectsConfig()
   };
 }

@@ -1,0 +1,33 @@
+# Projects Configuration
+# Add your projects here to showcase your work
+# This file contains user-specific data that can be easily customized
+
+projects:
+  - title: "Go Easy"
+    duration: "3 Months"
+    description: "Go Easy is a Web Application developed using HTML, CSS, JS and RESTAPI using NodeJS. This is for the easy use of getting a hostel pass for Hostel students."
+    frontend:
+      - "HTML"
+      - "CSS"
+      - "JavaScript"
+    backend:
+      - "Node.js"
+      - "MongoDB"
+    repository: "https://github.com/Havockeyan/Go-easy.git"
+    
+  - title: "Get Heads"
+    duration: "3 Months"
+    description: "Get Heads is a Web Application for job searching IT members. Here we manage and give jobs provided by companies through this Portal based on the given details by the user."
+    frontend:
+      - "ReactJS"
+      - "CSS"
+    backend:
+      - "Node.js"
+      - "MongoDB"
+    repository: "https://github.com/Havockeyan/getheads.git"
+
+# Projects Section Settings (Customizable)
+projects_settings:
+  title: "Projects"
+  subtitle: "A curated selection of things I've built and shipped recently."
+  description: "Here are some of my recent projects that showcase my skills and experience."
