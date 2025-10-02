@@ -15,6 +15,7 @@ A modern, responsive portfolio website built with Next.js showcasing my work as 
 - 🚀 **Projects Showcase**: Dedicated projects page with technology tags and repository links
 - 🔧 **YAML Configuration**: All content managed through easy-to-edit YAML files
 - 🎨 **Theme System**: Comprehensive CSS variable-based theme system for easy customization
+- ⚠️ **Configurable Banner**: Work in progress banner that can be easily toggled on/off via configuration
 
 ## Quick Start
 
@@ -153,6 +154,11 @@ theme:
   background_color: "#0b0b0f"
   text_color: "#ffffff"
   accent_color: "#7a6fff"
+
+# Banner Settings
+banner:
+  show_work_in_progress: true  # Set to false to hide the work in progress banner
+  message: "Work in Progress: This portfolio is currently under development. Some features may be incomplete or subject to change."
 ```
 
 ## Project Structure
@@ -231,6 +237,37 @@ The theme system uses React Context (`src/contexts/ThemeContext.js`) for state m
 
 #### Adding New Themes
 To add a new theme, add a new `[data-theme="theme-name"]` selector in `themes.css` and update the context accordingly.
+
+### Work in Progress Banner
+
+The portfolio includes a configurable work in progress banner that can be easily controlled:
+
+#### Banner Configuration
+Edit the banner settings in `config/site.yml`:
+
+```yaml
+banner:
+  show_work_in_progress: true  # Set to false to hide the banner
+  message: "Your custom banner message here"
+```
+
+#### Banner Features
+- **Toggle Visibility**: Simply change `show_work_in_progress` to `true` or `false`
+- **Custom Message**: Modify the `message` field to change the banner text
+- **User Dismissible**: Users can close the banner during their session
+- **Responsive**: Banner adapts to different screen sizes
+
+#### Usage Examples
+```yaml
+# Hide the banner completely
+banner:
+  show_work_in_progress: false
+
+# Show banner with custom message
+banner:
+  show_work_in_progress: true
+  message: "🚧 Site under maintenance - Some features may be unavailable"
+```
 
 ### Adding New Components
 

@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 
-const WarningBanner = () => {
+const WarningBanner = ({ showBanner = true, message = "Work in Progress: This portfolio is currently under development. Some features may be incomplete or subject to change." }) => {
   const [isVisible, setIsVisible] = useState(true);
 
-  if (!isVisible) return null;
+  if (!showBanner || !isVisible) return null;
 
   return (
     <div className="warning-banner">
@@ -28,7 +28,7 @@ const WarningBanner = () => {
           </svg>
         </div>
         <div className="warning-text">
-          <strong>Work in Progress:</strong> This portfolio is currently under development. Some features may be incomplete or subject to change.
+          {message}
         </div>
         <button
           className="warning-close"

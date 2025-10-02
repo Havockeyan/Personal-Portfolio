@@ -37,3 +37,9 @@ theme:
   background_color: "#0b0b0f"
   text_color: "#ffffff"
   accent_color: "#7a6fff"
+
+# Banner Settings
+# Control the work in progress banner visibility and message
+banner:
+  show_work_in_progress: false  # Set to false to hide the banner
+  message: "Work in Progress: This portfolio is currently under development. Some features may be incomplete or subject to change."
