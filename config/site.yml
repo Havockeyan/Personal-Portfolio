@@ -41,5 +41,5 @@ theme:
 # Banner Settings
 # Control the work in progress banner visibility and message
 banner:
-  show_work_in_progress: false  # Set to false to hide the banner
+  show_work_in_progress: true  # Set to false to hide the banner
   message: "Work in Progress: This portfolio is currently under development. Some features may be incomplete or subject to change."
