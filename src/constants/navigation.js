@@ -20,6 +20,13 @@ export const NAVIGATION_ITEMS = [
     active: false,
     type: 'route',
   },
+  {
+    id: 'blog',
+    name: 'Blog',
+    href: '/blog',
+    active: false,
+    type: 'route',
+  },
 ];
 
 export const BRAND_INFO = {
