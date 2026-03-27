@@ -61,6 +61,13 @@ export function getProjectsConfig() {
 }
 
 /**
+ * Load blog configuration
+ */
+export function getBlogConfig() {
+  return loadConfig('blog');
+}
+
+/**
  * Get all configurations
  */
 export function getAllConfigs() {
@@ -68,6 +75,7 @@ export function getAllConfigs() {
     personal: getPersonalConfig(),
     timeline: getTimelineConfig(),
     site: getSiteConfig(),
-    projects: getProjectsConfig()
+    projects: getProjectsConfig(),
+    blog: getBlogConfig()
   };
 }

@@ -13,6 +13,7 @@ A modern, responsive portfolio website built with Next.js showcasing my work as 
 - 🎭 **Animations**: Smooth animations and transitions throughout
 - 🌌 **Background Effects**: Animated starfield and grid background
 - 🚀 **Projects Showcase**: Dedicated projects page with technology tags and repository links
+- 📝 **Blog Integration**: Display your Medium articles directly on your portfolio with automatic RSS feed integration
 - 🔧 **YAML Configuration**: All content managed through easy-to-edit YAML files
 - 🎨 **Theme System**: Comprehensive CSS variable-based theme system for easy customization
 - ⚠️ **Configurable Banner**: Work in progress banner that can be easily toggled on/off via configuration
@@ -122,6 +123,26 @@ projects_settings:
 
 **Note**: The project structure and component logic are defined in `src/constants/projects.js` as templates. Only the data above needs to be customized in the YAML file.
 
+### Blog (`config/blog.yml`)
+
+```yaml
+# Blog Configuration
+blog_settings:
+  title: "Blog"
+  subtitle: "Thoughts, tutorials, and insights on web development and technology"
+  description: "Explore my latest articles and writings on Medium"
+
+# Medium Configuration
+medium:
+  # Your Medium username (without @)
+  username: "your-medium-username"
+  
+  # Number of articles to display (default: 10)
+  max_articles: 10
+```
+
+**Note**: The blog feature fetches articles from your Medium RSS feed. Simply set your Medium username in the configuration file, and your articles will be automatically displayed on the blog page.
+
 ### Site Settings (`config/site.yml`)
 
 ```yaml
@@ -169,11 +190,13 @@ Personal-Portfolio/
 │   ├── personal.yml       # Personal information
 │   ├── timeline.yml       # Timeline data
 │   ├── projects.yml       # Projects data
+│   ├── blog.yml           # Blog/Medium configuration
 │   └── site.yml           # Site settings
 ├── src/
 │   ├── app/               # Next.js app directory
 │   │   ├── about/         # About page
 │   │   ├── projects/      # Projects page
+│   │   ├── blog/          # Blog page
 │   │   ├── layout.js      # Root layout with theme provider
 │   │   └── page.js        # Home page
 │   ├── components/        # React components
@@ -192,12 +215,14 @@ Personal-Portfolio/
 │   │       ├── hero.css  # Hero section styles
 │   │       ├── skills.css # Skills section styles
 │   │       ├── projects.css # Projects page styles
+│   │       ├── blog.css  # Blog page styles
 │   │       └── footer.css # Footer styles
 │   ├── constants/        # Constants and templates
 │   │   ├── navigation.js # Navigation items
 │   │   └── projects.js   # Project templates and structure
 │   └── utils/            # Utility functions
-│       └── configLoader.js # YAML config loader
+│       ├── configLoader.js # YAML config loader
+│       └── mediumRSS.js  # Medium RSS feed fetcher
 ├── public/               # Static assets
 └── README.md
 ```
@@ -268,6 +293,29 @@ banner:
   show_work_in_progress: true
   message: "🚧 Site under maintenance - Some features may be unavailable"
 ```
+
+### Customizing the Favicon (Browser Tab Icon)
+
+Replace the default Vercel favicon with your own logo:
+
+#### Simple Method (Recommended)
+1. **Prepare your logo**: Create a square version (32x32, 64x64, or 128x128 pixels)
+2. **Convert to .ico format**: Use online tools like [favicon.io](https://favicon.io/) or [realfavicongenerator.net](https://realfavicongenerator.net/)
+3. **Replace the file**: Copy your new `favicon.ico` to `src/app/favicon.ico`
+4. **Clear browser cache**: Hard refresh (Ctrl+F5 or Cmd+Shift+R) to see changes
+
+#### Advanced Method (Professional Setup)
+For multiple device support, create these files in the `public/` directory:
+```
+public/
+├── favicon-16x16.png
+├── favicon-32x32.png  
+├── favicon-48x48.png
+├── apple-touch-icon.png (180x180px)
+└── android-chrome-192x192.png
+```
+
+Then update `src/app/layout.js` metadata with the icons configuration (see full example in customization docs).
 
 ### Adding New Components
 
